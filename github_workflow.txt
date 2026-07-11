@@ -1,0 +1,6 @@
+git remote add javax https://github.com/khanni1/JAVA.git                                                                                                                   
+git fetch javax clg                                                                              
+git branch      (no output expected)                                                                                     
+git checkout -b b1 javax/clg                                                                                                                                                               
+git branch                                                                                                                                                                                  
+history                                                                                                                    
