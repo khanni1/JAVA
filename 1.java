@@ -10,3 +10,4 @@ class SampleOne {
 		System.out.println("java code running "+x+" time, by "+y);
 	}
 }
+
