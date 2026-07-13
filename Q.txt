@@ -1,5 +1,5 @@
 (13-7-26 JAVA)
-C to F and vice versa in java (temperature unit)
+C to F and vice versa in java (temperature unit) done
 
 display max of 2 numbers. use conditional operators
 
@@ -14,13 +14,9 @@ using nested for loop display the following pattern
 ..
 
 using switch case statement do the following
-calculator and grade display
+calculator done
+grade display
 
-take a array of numbers 10 numbers hardcode is fine.
-perform the following
-1. find max
-2. find second min
-3. replace numbers having with odd pos with even pos
 
 Add 2 matrices
 
