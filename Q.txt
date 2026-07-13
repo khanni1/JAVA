@@ -1,0 +1,26 @@
+(13-7-26 JAVA)
+C to F and vice versa in java (temperature unit) done
+
+display max of 2 numbers. use conditional operators
+
+display max of 3 numbers
+
+using nested for loop display the following pattern
+1
+22
+333
+4444
+55555
+..
+
+using switch case statement do the following
+calculator done
+grade display
+
+
+Add 2 matrices
+
+tranpose a given matrix
+
+print pascal triangle
+
