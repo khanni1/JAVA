@@ -1,8 +1,6 @@
 /*
 take a array of numbers 10 numbers hardcode is fine.
 perform the following
-1. find max
-2. find second min
 3. replace numbers having with odd pos with even pos
 */
 
@@ -44,5 +42,9 @@ class ArrayOp{
 			}
 		}
 		return max;
+	}
+
+	private void oddEvenSwap(){
+		
 	}
 }
