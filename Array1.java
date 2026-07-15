@@ -1,13 +1,11 @@
 /*
 take a array of numbers 10 numbers hardcode is fine.
 perform the following
-1. find max
-2. find second min
 3. replace numbers having with odd pos with even pos
 */
 
 class ArrayOp{
-	private int arr[] = {12,45,78,96,32,45,-8,0,14,-1};
+	private int arr[] = {12,45,78,96,32,45,-8,0,11};
 	
 	public static void main(String args[]){
 		
@@ -15,7 +13,8 @@ class ArrayOp{
 		
 		System.out.println("MAX : "+a1.maximum());
 		System.out.println("SECOND MIN : "+a1.secondMin());
-		
+		a1.oddEvenSwap();
+		a1.printarr();
 		
 	}
 	
@@ -44,5 +43,21 @@ class ArrayOp{
 			}
 		}
 		return max;
+	}
+
+	private void oddEvenSwap(){
+		int i,temp=0;
+		for(i=0 ; i<arr.length-1 ; i = i+2){
+			temp = arr[i];
+			arr[i] = arr[i+1];
+			arr[i+1] = temp;
+		}
+	}
+
+	public void printarr(){
+		int i=0;
+		for(i=0 ; i<arr.length ; i++){
+			System.out.print(arr[i]+" ");
+		}
 	}
 }
