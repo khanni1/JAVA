@@ -1,0 +1,48 @@
+Read Different Data Types Scanner
+Method	Input Type	Example
+sc.nextInt()	Integer	||int age = sc.nextInt();
+sc.nextDouble()	Decimal	||double price = sc.nextDouble();
+sc.nextFloat()	Float	||float height = sc.nextFloat();
+sc.nextLine()	Full Line (String)	||String name = sc.nextLine();
+sc.next()	Single Word ||String word = sc.next();
+sc.nextBoolean()	Boolean|| boolean flag = sc.nextBoolean();
+=============================================================================
+import java.util.Scanner;
+
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter your name:");
+        String name = sc.nextLine();
+        
+        System.out.println("Enter your age:");
+        int age = sc.nextInt();
+        
+        System.out.println("Enter your height:");
+        double height = sc.nextDouble();
+        
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Height: " + height);
+        
+        sc.close();
+    }
+}
+
+=============================================================================
+
+BUFFERING FIX
+
+int age = sc.nextInt();
+String name = sc.nextLine();  // ❌ This will be empty!
+// Solution: Add sc.nextLine() after nextInt() to clear buffer
+int age = sc.nextInt();
+sc.nextLine();  // Clear the newline character
+String name = sc.nextLine();  // ✅ Now it works
+
+===============================================================================
+Rule of Thumb:
+After ANY Scanner method EXCEPT nextLine(), always call sc.nextLine() before using nextLine() again.
+
+=================================================================================
