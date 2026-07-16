@@ -2,15 +2,15 @@ class Matrix{
 
 // assuming the matrices are not jagged as its not like that in mathematics for matrices
     int mat1[][] = {
-        {1,2,3},
-        {4,5,6},
-        {7,8,9},
+        {1,2,3,-1},
+        {4,5,6,-2},
+        {7,8,9,-3},
     };
 
     int mat2[][] = {
-        {10,20,30},
-        {40,50,60},
-        {70,80,90},
+        {10,20,30,-1},
+        {40,50,60,-2},
+        {70,80,90,-3},
     };
 
     public static void main(String args[]){
@@ -23,8 +23,14 @@ class Matrix{
 
        mat3 = m.subMat(m.mat1,m.mat2);
        System.out.print("Subtraction of matrices \n");
-
        m.printMat(mat3);
+
+
+       mat3 = m.tranpose(m.mat1);
+       System.out.print("transpose of matrix 1 \n");
+       m.printMat(mat3);
+
+
 
 
     }
@@ -80,8 +86,23 @@ private int[][] subMat(int mat1[][],int mat2[][]){
     return mat3;
 
     }
-    
+
 // tranpose a given matrix
+
+private int[][] tranpose(int mat[][]){
+    
+    int[][] t_mat = new int[mat[0].length][mat.length];
+
+    int i,j;
+
+    for(i=0 ; i<mat.length ; i++){
+        for(j=0 ; j<mat[0].length ; j++){
+            t_mat[j][i] = mat[i][j];
+        }
+    }
+
+    return t_mat;
+}
 
 
 }
