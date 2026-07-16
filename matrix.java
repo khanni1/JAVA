@@ -18,7 +18,15 @@ class Matrix{
         Matrix m = new Matrix(); // so i can use non static methods of class into static main 
 
        int[][] mat3 = m.addMat(m.mat1,m.mat2);
+       System.out.print("addition of matrices \n");
        m.printMat(mat3);
+
+       mat3 = m.subMat(m.mat1,m.mat2);
+       System.out.print("Subtraction of matrices \n");
+
+       m.printMat(mat3);
+
+
     }
 
     private int[][] addMat(int mat1[][],int mat2[][]){
@@ -49,8 +57,29 @@ class Matrix{
         }
         System.out.println();
     }
+        System.out.println();
 }
 
+private int[][] subMat(int mat1[][],int mat2[][]){
+
+        if(mat1.length != mat2.length || mat1[0].length != mat2[0].length){
+            return null;
+        }
+        
+        // int mat3[mat1.length][mat1[0].length];
+
+        int[][] mat3 = new int[mat1.length][mat1[0].length];
+
+        int i=0,j=0; 
+
+        for(i=0 ; i<mat1.length ; i++){
+            for(j=0 ; j<mat1[0].length;j++){
+                mat3[i][j] = mat2[i][j] - mat1[i][j];
+            }
+        }
+    return mat3;
+
+    }
 
 
 }
