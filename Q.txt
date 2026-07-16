@@ -17,9 +17,5 @@ calculator done
 grade display
 
 
-Add 2 matrices
-
-tranpose a given matrix
-
 print pascal triangle
 

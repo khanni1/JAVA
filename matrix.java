@@ -80,6 +80,8 @@ private int[][] subMat(int mat1[][],int mat2[][]){
     return mat3;
 
     }
+    
+// tranpose a given matrix
 
 
 }
