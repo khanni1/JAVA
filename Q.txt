@@ -1,9 +1,5 @@
 (13-7-26 JAVA)
 
-display max of 2 numbers. use conditional operators
-
-display max of 3 numbers
-
 using nested for loop display the following pattern
 1
 22
@@ -17,5 +13,6 @@ calculator done
 grade display
 
 
-print pascal triangle
+print pascal triangle 
+num = num * (i-j)/(j+1)
 
