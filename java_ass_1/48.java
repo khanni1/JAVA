@@ -6,11 +6,17 @@ Explanaton: The program converts each digit of the number into its corresponding
 
 // 1235 => one two three five
 
+import java.util.Scanner;
 import java.util.Vector;
 
 class Decimal_Words {
     public static void main(String args[]){
-        int n = 1242;
+
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter Integer :")
+
+        int n = s.nextInt();
 
         Vector<String> vec = seperateDigits(n);
 
@@ -27,8 +33,9 @@ class Decimal_Words {
         int rem;
 
         int copy = num;
+        num = Math.abs(num);
 
-        while(num <= 0){
+        while(num > 0){
             rem = num % 10;
             num = num / 10;
             v1.add(0,digitToWord(rem)); // adds from front
