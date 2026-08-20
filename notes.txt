@@ -46,3 +46,13 @@ Rule of Thumb:
 After ANY Scanner method EXCEPT nextLine(), always call sc.nextLine() before using nextLine() again.
 
 =================================================================================
+
+Your .java code
+      ↓
+Java Compiler (javac)
+      ↓
+Bytecode (.class)
+      ↓
+JVM
+      ↓
+Program runs

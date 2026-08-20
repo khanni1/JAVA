@@ -1,3 +1,4 @@
+import java.lang.*;
 import java.util.*;
 
 class employee{
@@ -49,7 +50,7 @@ class RuntimeErr{
 			System.out.println("Array store error");
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
-			e.printStackTrace();
+			// e.printStackTrace();
 			
 			
 		}
@@ -58,7 +59,7 @@ class RuntimeErr{
 			System.out.println("null pointer exception");
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
-			e.printStackTrace();
+			// e.printStackTrace();
 			
 			
 		}
@@ -67,7 +68,7 @@ class RuntimeErr{
 			System.out.println("string out of bound exception");
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
-			e.printStackTrace();
+			// e.printStackTrace();
 			
 			
 			
@@ -77,10 +78,13 @@ class RuntimeErr{
 			System.out.println("general exception");
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
-			e.printStackTrace();
+			// e.printStackTrace();
 			
 			
 			
+		}
+		finally {
+			System.out.println("I will always run !");
 		}
 	}
 }
