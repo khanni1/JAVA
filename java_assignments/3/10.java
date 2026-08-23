@@ -24,16 +24,21 @@ class main_poly{
 
 
         p1.insert();
-        p1.displayPoly(true);
+        p1.toString(true);
 
         p2.insert();
-        p2.displayPoly(true);
+        p2.toString(true);
 
      polynomial  temp =  p1.addPoly(p2);
+     polynomial  temp2 =  p1.subPoly(p2);
 
      System.out.println('\n');
 
-     temp.displayPoly(true);
+     temp.toString(true);
+
+     System.out.println('\n');
+
+    temp2.toString(true);
 
 
 
@@ -72,7 +77,7 @@ class polynomial{
         return p;
     }
 
-    public void displayPoly(boolean nozero){
+    public void toString(boolean nozero){
 
         if(!nozero){
 
@@ -132,6 +137,42 @@ class polynomial{
 
         return temp;
     }
+
+    public polynomial subPoly(polynomial p2){
+
+        int mdeg = 0;
+
+        if(degree > p2.degree){
+            mdeg = degree;
+        }
+        else {
+            mdeg = p2.degree;
+        }
+
+        polynomial temp = new polynomial(mdeg);
+
+        for(int i=0 ; i<=mdeg ; i++){
+
+            Double coeff = 0.0;
+
+            if(i > p2.degree){
+            coeff = p.get(i);
+
+            }
+            else if (i > degree ){
+            coeff = p2.p.get(i);
+                
+            }
+            else{
+                coeff = p.get(i) - p2.p.get(i);
+            }
+
+            temp.p.add(coeff);
+        }
+
+        return temp;
+    }
+
 
     
 }
