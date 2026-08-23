@@ -24,16 +24,16 @@ class main_poly{
 
 
         p1.insert();
-        p1.displayPoly();
+        p1.displayPoly(true);
 
         p2.insert();
-        p2.displayPoly();
+        p2.displayPoly(true);
 
      polynomial  temp =  p1.addPoly(p2);
 
      System.out.println('\n');
 
-     temp.displayPoly();
+     temp.displayPoly(true);
 
 
 
@@ -72,13 +72,29 @@ class polynomial{
         return p;
     }
 
-    public void displayPoly(){
+    public void displayPoly(boolean nozero){
+
+        if(!nozero){
+
         for(int i=degree ; i>=0 ; i--){
             System.out.print(p.get(i)+"x^"+i);
             if(i > 0){
                 System.out.print(" + ");
             }
 
+        }
+        }
+        else{
+            for(int i=degree ; i>=0 ; i--){
+            if(p.get(i) == 0.0){
+                continue;
+            }
+            if(i < degree){
+                System.out.print(" + ");
+            }
+            System.out.print(p.get(i)+"x^"+i);
+
+        }
         }
     }
 
