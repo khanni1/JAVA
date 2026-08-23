@@ -31,16 +31,19 @@ class main_poly{
 
      polynomial  temp =  p1.addPoly(p2);
      polynomial  temp2 =  p1.subPoly(p2);
+     polynomial  temp3 =  p1.mulPoly(p2);
 
      System.out.println('\n');
 
-     temp.toString(true);
+     p1.toString(true);
 
      System.out.println('\n');
 
-    temp2.toString(true);
+    p2.toString(true);
 
+     System.out.println('\n');
 
+    temp3.toString(false);
 
 
 
@@ -76,6 +79,21 @@ class polynomial{
 
         return p;
     }
+
+     public ArrayList<Double> insert(Double ini){
+
+        Scanner sc = new Scanner(System.in);
+
+
+        // initialise all coeff with ini
+
+        for(int i=0 ; i<= degree ; i++){
+            p.add(ini);
+        }
+
+        return p;
+    }
+
 
     public void toString(boolean nozero){
 
@@ -172,6 +190,32 @@ class polynomial{
 
         return temp;
     }
+
+    public polynomial mulPoly(polynomial px){
+        int mdeg = degree + px.degree;
+
+        polynomial temp = new polynomial(mdeg);
+
+        temp.insert(0.0); // ini all with 0
+
+        Double coeff;
+        int index,i,j;
+
+
+        for(i=0 ; i<= degree ; i++){
+            for(j=0 ; j<=px.degree ; j++ ){
+                coeff = p.get(i) * px.p.get(j) ;// mul the coefficients
+                index = i+j ;//add the powers the powers are represted by index of polynomial
+
+                // add already exsisting coeff on that index
+
+               coeff =  temp.p.get(index) + coeff;
+                temp.p.set(index,coeff);
+            }
+        }
+    return temp;
+    }
+
 
 
     
