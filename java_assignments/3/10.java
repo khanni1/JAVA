@@ -15,13 +15,28 @@ class main_poly{
 
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter degree of ploynomial : ");
-        int deg = sc.nextInt();
+        // System.out.println("Enter degree of polynomial : ");
+        // int deg = sc.nextInt();
 
-        polynomial p1 = new polynomial(deg);
+        polynomial p1 = new polynomial(3);
+        polynomial p2 = new polynomial(2);
+
+
 
         p1.insert();
         p1.displayPoly();
+
+        p2.insert();
+        p2.displayPoly();
+
+     polynomial  temp =  p1.addPoly(p2);
+
+     System.out.println('\n');
+
+     temp.displayPoly();
+
+
+
 
 
     }
@@ -49,7 +64,7 @@ class polynomial{
         // degree = deg;
 
         for(int i=0 ; i<= degree ; i++){
-            System.out.println("enter x^"+i+"= ");
+            System.out.println("\nenter x^"+i+"= ");
            Double x = sc.nextDouble();
             p.add(x);
         }
@@ -65,6 +80,41 @@ class polynomial{
             }
 
         }
+    }
+
+    public polynomial addPoly(polynomial p2){
+
+        int mdeg = 0;
+
+        if(degree > p2.degree){
+            mdeg = degree;
+        }
+        else {
+            mdeg = p2.degree;
+        }
+
+        polynomial temp = new polynomial(mdeg);
+
+        for(int i=0 ; i<=mdeg ; i++){
+
+            Double coeff = 0.0;
+
+            if(i > p2.degree){
+            coeff = p.get(i);
+
+            }
+            else if (i > degree ){
+            coeff = p2.p.get(i);
+                
+            }
+            else{
+                coeff = p.get(i) + p2.p.get(i);
+            }
+
+            temp.p.add(coeff);
+        }
+
+        return temp;
     }
 
     
