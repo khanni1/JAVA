@@ -1,0 +1,146 @@
+
+output:
+FileWriter fw = new FileWriter("output.txt");
+BufferedWriter bw = new BufferedWriter(fw);
+
+bw.write("Hello Java");
+bw.newLine();
+
+bw.close();
+
+input : 
+FileReader fr = new FileReader("test.txt");
+BufferedReader br = new BufferedReader(fr);
+
+String line;
+while ((line = br.readLine()) != null) {
+    System.out.println(line);
+}
+
+br.close();
+
+========================================================
+
+.txt  → text/character data
+.bin  → binary data (just a naming convention)
+.ser  → serialized Java objects
+========================================================
+
+ObjectOutputStream oos =
+    new ObjectOutputStream(new FileOutputStream("student.ser"));
+
+oos.writeObject(student);
+oos.close();
+========================================================
+ObjectInputStream ois =
+    new ObjectInputStream(new FileInputStream("student.ser"));
+
+Student s = (Student) ois.readObject();
+ois.close();
+
+======================================================
+yield()/sleep()/suspend() etc.. → inside run()
+
+Tells the scheduler that the current thread is willing to give other threads a chance.
+
+public void run() {
+    for (int i = 0; i < 10; i++) {
+        System.out.println("A");
+        Thread.yield();
+    }
+}
+
+It's only a hint; it doesn't guarantee that another thread will run.
+
+==================================================================
+
+synchronized void increment() {
+    count++;
+}
+
+synchronized (this) {
+    count++;
+}
+=================================================================
+Thread A
+   ↓
+enters synchronized block
+   ↓
+acquires LOCK 🔒
+   ↓
+starts executing
+   ↓
+scheduler may switch to Thread B
+   ↓
+Thread B tries to enter SAME synchronized block
+   ↓
+❌ B cannot enter → waits for LOCK
+   ↓
+A gets CPU again
+   ↓
+A finishes synchronized block
+   ↓
+releases LOCK 🔓
+   ↓
+B can now acquire LOCK and execute
+
+The key point is:
+
+The lock belongs to the synchronized block's lock object, not to the CPU.
+
+So A can temporarily lose CPU control, but B/C cannot enter that same synchronized section while A holds the lock.
+
+That's the essence of mutual exclusion.
+
+=================================================================
+
+super.method()       → superclass method
+super.variable       → superclass variable
+super()              → superclass constructor
+
+===============================================================
+
+A lambda expression is simply a short way of implementing a functional interface (an interface having one abstract method).
+
+interface Calculator {
+    int add(int a, int b);
+}
+
+Calculator c = (a, b) -> a + b;
+
+System.out.println(c.add(10, 20));
+
+InterfaceName variable = (parameters) -> statement;
+
+============================================================
+
+final
+
+A keyword.
+
+Used with:
+
+final variable
+final method
+final class
+Final variable
+final int x = 10;
+
+// x = 20;  // Error
+
+Once assigned, it cannot be reassigned.
+
+Final method
+class A {
+    final void show() {
+        System.out.println("Hello");
+    }
+}
+
+A subclass cannot override show().
+
+Final class
+final class A {
+}
+
+Cannot be inherited.

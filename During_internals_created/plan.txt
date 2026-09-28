@@ -1,0 +1,46 @@
+java practicals
+
+google drive (only from_usb)
+https://drive.google.com/drive/folders/1GcIZwpvJTRigLAuF1x3peKPoP9QkY_UB?usp=drive_link
+https://drive.google.com/drive/folders/1YxbVNAcVvWM7B5b8YwbynbVSkq9ZYO9B?usp=drive_link
+
+GitHub (internals only all data taken from java_git so DW)
+
+textbook
+
+assignments practicals
+
+notebook
+
+
+
+NOTEPAD++
+Settings → Preferences → Backup
+
+Under Session snapshot and periodic backup:
+
+✅ Enable session snapshot and periodic backup
+Backup interval: set e.g. 5 seconds
+Optional: choose Enable under periodic backup if available.
+
+Enable Autocomplete like VS Code
+Go to:
+
+Settings → Preferences → Auto-Completion
+
+Enable:
+
+✅ Enable auto-completion on each input
+Set From 2 characters or From 1 character
+✅ Function parameters hint on input (if available)
+
+For Java, Notepad++'s built-in autocomplete is much more basic than VS Code/IntelliSense. 
+It mainly suggests words/functions based on 
+available word lists rather than understanding your Java project.
+
+You can also use:
+Ctrl + Space
+to manually trigger autocomplete.
+
+hello
+
