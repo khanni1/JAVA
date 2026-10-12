@@ -6,7 +6,11 @@
 
 class Complex_main{
     public static void main(String args[]){
+        Complex c1(1,1);
+        Complex c2(1,0);
+        Complex c3(2,3);
 
+        add(c1,c2).toString();
     }
 
 
@@ -29,5 +33,22 @@ class Complex{
         c.real = c1.real + this.real;
         c.img = c1.img + this.img;
 
+        return c;
+
+    }
+
+      Complex sub(Complex c1){
+        Complex c = new Complex(0,0);
+        // ini
+
+        c.real = c1.real - this.real;
+        c.img = c1.img - this.img;
+
+        return c;
+
+    }
+
+    void toString(){
+        System.out.println(c.real+' + '+c.img+'i')
     }
 }
