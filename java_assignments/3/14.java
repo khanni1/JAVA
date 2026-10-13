@@ -6,11 +6,13 @@
 
 class Complex_main{
     public static void main(String args[]){
-        Complex c1(1,1);
-        Complex c2(1,0);
-        Complex c3(2,3);
+        Complex c1 = new Complex(1.0,1.0);
+        Complex c2 = new Complex(1.0,0.0);
+        Complex c3 = new Complex(2.0,3.0);
 
-        add(c1,c2).toString();
+        System.out.println(c1.add(c2).toString());
+        System.out.println(c1.sub(c2).toString());
+        
     }
 
 
@@ -27,7 +29,7 @@ class Complex{
     }
 
     Complex add(Complex c1){
-        Complex c = new Complex(0,0);
+        Complex c = new Complex(0.0,0.0);
         // ini
 
         c.real = c1.real + this.real;
@@ -38,7 +40,7 @@ class Complex{
     }
 
       Complex sub(Complex c1){
-        Complex c = new Complex(0,0);
+        Complex c = new Complex(0.0,0.0);
         // ini
 
         c.real = c1.real - this.real;
@@ -47,8 +49,8 @@ class Complex{
         return c;
 
     }
-
-    void toString(){
-        System.out.println(c.real+' + '+c.img+'i')
+    // @Override
+   public String toString(){
+        return real + " + " + img + "i";
     }
 }
